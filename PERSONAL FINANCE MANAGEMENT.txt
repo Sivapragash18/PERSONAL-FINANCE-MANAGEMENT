@@ -1,0 +1,48 @@
+package personal_finance_management_;
+
+import java.util.Scanner;
+
+public class financemanagement {
+public static void main(String[] args) {
+// Scanner object for user input
+Scanner scanner = new Scanner(System.in);
+
+System.out.println("=== Personal Finance Management ===");
+
+// Input total income
+System.out.print("Enter your total monthly income: ");
+double income = scanner.nextDouble();
+
+// Input expenses
+System.out.print("Enter your monthly rent: ");
+double rent = scanner.nextDouble();
+
+System.out.print("Enter your monthly groceries expense: ");
+double groceries = scanner.nextDouble();
+
+System.out.print("Enter your monthly transportation expense: ");
+double transportation = scanner.nextDouble();
+System.out.print("Enter other monthly expenses: ");
+double otherExpenses = scanner.nextDouble();
+
+// Calculate total expenses
+double totalExpenses = rent + groceries + transportation + otherExpenses;
+
+// Calculate savings
+double savings = income - totalExpenses;
+
+// Display results
+System.out.println("\n=== Monthly Finance Summary ===");
+System.out.println("Total Income: $" + income);
+System.out.println("Total Expenses: $" + totalExpenses);
+
+if (savings >= 0) {
+System.out.println("Savings: $" + savings);
+} else {
+System.out.println("You are overspending by: $" + Math.abs(savings));
+}
+
+// Close the scanner
+scanner.close();
+}
+}
